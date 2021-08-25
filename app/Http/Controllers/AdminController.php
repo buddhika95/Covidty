@@ -10,6 +10,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
+        
         $this->middleware('role:admin');
     }
 
@@ -34,7 +35,7 @@ class AdminController extends Controller
             'name' => $data->name,
             'address' => $data->address,
             'dob' => $data->dob,
-            'phone_number' => $data->pno   
+            'phone_number' => $data->pno
         ]);
         return redirect()->back()->with('success','Profile Updated.');
         // return $user;
