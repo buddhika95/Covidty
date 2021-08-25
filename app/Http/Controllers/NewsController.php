@@ -120,14 +120,6 @@ class NewsController extends Controller
         $filename='';
         return redirect()->route('showAllNews');
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
     public function destroy($id)
     //destroy func
     {
@@ -142,4 +134,13 @@ class NewsController extends Controller
         $news = News::paginate(10);
         return view('news.showAllNews')->with(['news'=>$news]);
     }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+
 }
